@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Button from '@mui/material/Button';
+import '../App.css';
 
 // Helper function to detect collision between two rectangles
 function rectsIntersect(r1, r2) {
@@ -127,16 +128,42 @@ const Game = () => {
       ))}
       <div style={{ position: 'absolute', top: 10, left: 10, fontSize: '20px', fontWeight: 'bold' }}>Score: {Math.floor(scoreRef.current)}</div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-      {gameOver && !hug && (
+      {/* {gameOver && !hug && (
+        <h1>Game Over</h1>,
         <Button variant="contained" color="secondary" style={{ margin: '70px 10px' }} onClick={() => window.location.reload()}>
+        Restart
+      </Button>,
+        <Button variant="contained" color="secondary" style={{ margin: '70px 10px' }} onClick={() => window.location.href = NEXT_LEVEL_URL}>
           Skip
         </Button>
       )}
       {hug && (
+        <h1>Hurrey ! You Win</h1>,
         <Button variant="contained" color="primary" style={{ margin: '70px 10px' }} onClick={() => window.location.href = NEXT_LEVEL_URL}>
           Next
         </Button>
-      )}
+      )} */}
+      {gameOver && !hug && (
+  <div style={{ textAlign: 'center' }}>
+    <h1>Game Over</h1>
+    <Button variant="contained" color="secondary" style={{ margin: '10px 10px' }} onClick={() => window.location.reload()}>
+      Restart
+    </Button>
+    <Button variant="contained" color="secondary" style={{ margin: '10px 10px' }} onClick={() => window.location.href = NEXT_LEVEL_URL}>
+      Skip
+    </Button>
+  </div>
+)}
+
+{hug && (
+  <div style={{ textAlign: 'center' }}>
+    <h1>Hurrey! You Win</h1>
+    <Button variant="contained" color="primary" style={{ margin: '10px 10px' }} onClick={() => window.location.href = NEXT_LEVEL_URL}>
+      Next
+    </Button>
+  </div>
+)}
+
     </div>
     </div>
   );
