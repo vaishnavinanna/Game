@@ -4,7 +4,7 @@ import Game from './component/Game';
 function App() {
   return (
     <div className="App">
-      <h1 style={{ textAlign: 'center' }}>Valentine's Hug Game</h1>
+      <h1 style={{ textAlign: 'center' }}>Valentine's Game</h1>
       <Game />
     </div>
   );
